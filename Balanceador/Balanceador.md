@@ -44,3 +44,13 @@ server {
         try_files $uri $uri/ =404;
     }
 }
+
+## Verificación del Balanceo
+
+Ambas apps incluyen el siguiente endpoint en `index.js`:
+
+```js
+app.get('/api/info', (req, res) => {
+  const hostname = os.hostname();
+  res.json({ mensaje: `Hola desde app de ${hostname}` });
+});
