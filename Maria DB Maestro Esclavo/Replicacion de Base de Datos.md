@@ -23,14 +23,5 @@ El registro binario es fundamental para la replicación, ya que almacena todas l
 
 Editar el archivo de configuración de MariaDB, usualmente ubicado en:
 
-## 2.2 Crear un usuario para la replicación en el Maestro (app1)
-
-Para que el servidor esclavo pueda conectarse y obtener los cambios en tiempo real, es necesario crear un usuario exclusivo para la replicación con los permisos adecuados.
-
-Ingresamos a MariaDB en el maestro:
-
-```sql
-CREATE USER 'repl'@'%' IDENTIFIED BY 'tu_contraseña_segura';
-GRANT REPLICATION SLAVE ON *.* TO 'repl'@'%';
-FLUSH PRIVILEGES;
-
+```ini
+/etc/mysql/mariadb.conf.d/50-server.cnf

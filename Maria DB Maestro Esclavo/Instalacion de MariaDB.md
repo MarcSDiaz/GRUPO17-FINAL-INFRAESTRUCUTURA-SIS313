@@ -11,3 +11,5 @@ Los pasos para la instalación son:
 ```bash
 sudo apt update
 sudo apt install mariadb-server
+
+
